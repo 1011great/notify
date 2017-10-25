@@ -1,9 +1,12 @@
 !(() => {
   // html模版
   const template = `<section id="notify-container" class="notify-container">
-                        <h3 class="notify-title"></h3>
-                        <article class="notify-content"></article>
-                      </section>`
+                    <a href="javascript:close()">
+                    <button class="btn" id="btn" onclick="close()">关闭</button>
+                    </a>
+                    <h3 class="notify-title"></h3>
+                    <article class="notify-content"></article>
+                    </section>`
 
   // Help类，这里作用是一个utils
   class Help {
@@ -57,7 +60,7 @@
       this.notify.style.display = 'block'
       // 显示后经过一段时间自动隐藏
       if (opt.autoHide) {
-        setTimeout(() => {
+         setTimeout(() => {
           this.notify.style.display = 'none'
         }, opt.timeout)
       }
@@ -78,5 +81,9 @@
   } else {
     window.Notify = Notify
   }
-
 })()
+//关闭函数
+function close(){
+  var  adv=document.getElementById("notify-container");
+  adv.style.display="none";
+}

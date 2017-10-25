@@ -1,16 +1,43 @@
 .notify-container {
   width: 300px;
-  height: 100px;
-  border: 1px solid #ccc;
+  height: 200px;
+  border: 4px groove #ccc;
   border-radius: 4px;
-  position: fixed;
-  top: 10px;
-  right: 5px;
-  /* display: none; */
+  position:relative;
+  animation:mymove 7s;
+  -webkit-animation:mymove 7s; /*Safari and Chrome*/
+  animation-fill-mode: forwards;
+  }
+  /*notify-container向右下角移动*/
+  @keyframes mymove
+  {
+    0%{top:0px;left:0px;}
+    25%{top:100px;left:100px;}
+    50%{top:200px;left:200px;}  
+    75%{top:300px;left:300px}
+    100%{top:400px;left:400px}
+}
+  
+  @-webkit-keyframes mymove /*Safari and Chrome*/
+  {
+  0%{top:0px;left:0px;}
+  25%{top:100px;left:100px;}
+  50%{top:200px;left:200px;}  
+  75%{top:300px;left:300px}
+  100%{top:400px;left:400px}
+}
+/*top: 28px;
+  right: 400px;
+  display: none; */
+
+
+#btn{
+  position: relative;
+  left:255px;
 }
 .notify-title {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px solid #cdcdcd;
 }
 .notify-content {
   padding-left: 5px;
-}
+}  
